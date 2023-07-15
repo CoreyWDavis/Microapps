@@ -46,7 +46,7 @@ struct StarshipView: View {
                 LabeledContent("Model", value: model.model)
                 LabeledContent("Class", value: model.starshipClass)
                 LabeledContent("Crew", value: model.crewCount)
-                LabeledContent("Pasenger", value: model.passengerCount)
+                LabeledContent("Passenger", value: model.passengerCount)
                 LabeledContent("Hyperdrive Rating", value: model.hyperdriveRating)
             }, footer: {
                 Text(model.url)
