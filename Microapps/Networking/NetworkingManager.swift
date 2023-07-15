@@ -7,16 +7,10 @@
 
 import Foundation
 
-enum HTTPMethod: String {
-    case get = "GET"
-}
-
 struct NetworkingManager {    
-    static func fetch<T: Codable>(method: HTTPMethod, destination: String) async -> T? {
-        guard let url = URL(string: destination) else { return nil }
-        var request = URLRequest(url: url)
-        request.httpMethod = method.rawValue
+    static func fetch<T: Codable>(_ endpoint: EndpointRepresentable) async -> T? {
         do {
+            let request = try EndpointFactory.makeRequest(endpoint)
             let (data, response) = try await URLSession.shared.data(for: request)
             guard let httpResponse = response as? HTTPURLResponse else {
                 print("Unexpected resposne: \(response.description)")
@@ -29,9 +23,11 @@ struct NetworkingManager {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             return try decoder.decode(T.self, from: data)
+        } catch EndpointFactoryError.unableToConstructURLFromComponents(let description) {
+            print("Error building URL: \(description)")
         } catch {
             print("Error fetching data: \(error)")
-            return nil
         }
+        return nil
     }
 }

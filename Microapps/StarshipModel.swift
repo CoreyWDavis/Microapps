@@ -67,8 +67,7 @@ struct StarshipModel: Codable {
 
 extension StarshipModel {
     static func fetch(id: Int) async -> StarshipModel? {
-        let destination = "https://swapi.dev/api/starships/" + String(describing: id)
-        return await NetworkingManager.fetch(method: .get, destination: destination)
+        return await NetworkingManager.fetch(StarshipEndpoint.starship(id))
     }
         
     static func fetch(id: Int, completionHandler: @escaping ((StarshipModel?) -> Void)) {
@@ -76,5 +75,25 @@ extension StarshipModel {
             let data = await fetch(id: id)
             completionHandler(data)
         }
+    }
+}
+
+extension StarshipModel {
+    static func mock() -> StarshipModel {
+        return StarshipModel(name: "Death Star",
+                             model: "DS-1 Orbital Battle Station",
+                             starshipClass: "Deep Space Mobile Battlestation",
+                             manufacturer: "Imperial Department of Military Research, Sienar Fleet Systems",
+                             costInCredits: "1000000000000",
+                             length: "120000",
+                             crew: "342,953",
+                             passengers: "843,342",
+                             maxAtmospheringSpeed: "n/a",
+                             hyperdriveRating: "4.0",
+                             cargoCapacity: "1000000000000",
+                             consumables: "3 years",
+                             url: "https://swapi.dev/api/starships/9/",
+                             created: "2014-12-10T16:36:50.509000Z",
+                             edited: "2014-12-20T21:26:24.783000Z")
     }
 }
