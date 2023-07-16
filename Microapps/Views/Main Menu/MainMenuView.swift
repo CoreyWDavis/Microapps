@@ -27,15 +27,16 @@ struct MainMenuView: View {
     
     var body: some View {
         ZStack {
-            if model.state == .loading {
-                ProgressView()
-            }
             VStack {
-                Button("Starships") { route.send(.starshipDetail(id: 9)) }
+                Button("Starships") { route.send(.starships) }
                 Spacer()
             }
             .disabled(model.state == .loading)
+            if model.state == .loading {
+                ProgressView()
+            }
         }
+        .navigationTitle("Main Menu")
     }
 }
 

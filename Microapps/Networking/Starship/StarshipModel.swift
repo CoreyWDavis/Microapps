@@ -65,6 +65,10 @@ struct StarshipModel: Codable {
     var edited: String
 }
 
+extension StarshipModel: Identifiable {
+    var id: UUID { UUID() }
+}
+
 extension StarshipModel {
     static func fetch(id: Int) async -> StarshipModel? {
         return await NetworkingManager.fetch(StarshipEndpoint.starship(id))

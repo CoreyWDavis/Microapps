@@ -9,5 +9,5 @@ import Foundation
 
 enum AppRoute {
     case rootView
-    case starshipDetail(id: Int)
+    case starships
 }
