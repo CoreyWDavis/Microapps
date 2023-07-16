@@ -16,13 +16,9 @@ class AppCoordinator: NavigationCoordinator {
     private var viewModel: MainMenuViewModel?
     
     @MainActor
-    init() {
-        let rootView = makeRootView()
-        navigation = makeNavigation(rootView: rootView)
-    }
-    
     func start() {
         print("Starting")
+        navigate(to: .rootView)
     }
     
     func stop() {
@@ -32,6 +28,9 @@ class AppCoordinator: NavigationCoordinator {
     @MainActor
     private func navigate(to route: AppRoute) {
         switch route {
+        case .rootView:
+            let rootView = makeRootView()
+            navigation = makeNavigation(rootView: rootView)
         case .starships:
             Task {
                 viewModel?.state = .loading
@@ -70,6 +69,6 @@ class AppCoordinator: NavigationCoordinator {
         }
         let viewModel = StarshipViewModel(model: model)
         let view = StarshipView(model: viewModel)
-        return await UIHostingController(rootView: view)
+        return UIHostingController(rootView: view)
     }
 }

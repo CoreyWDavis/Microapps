@@ -8,5 +8,6 @@
 import Foundation
 
 enum AppRoute {
+    case rootView
     case starships
 }

@@ -55,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A60F57302A648C1300073D5E /* Main Menu */ = {
+			isa = PBXGroup;
+			children = (
+				A6A484C62A63639100B9418D /* MainMenuView.swift */,
+			);
+			path = "Main Menu";
+			sourceTree = "<group>";
+		};
 		A67246F62A62FD5C00952BD6 = {
 			isa = PBXGroup;
 			children = (
@@ -76,7 +84,6 @@
 			children = (
 				A67247022A62FD5C00952BD6 /* AppDelegate.swift */,
 				A67247042A62FD5C00952BD6 /* SceneDelegate.swift */,
-				A6A484C62A63639100B9418D /* MainMenuView.swift */,
 				A6A484CB2A6374B800B9418D /* Coordinators */,
 				A6A484B92A633C7300B9418D /* Networking */,
 				A6A484CA2A6364B000B9418D /* Routes */,
@@ -120,6 +127,7 @@
 		A6A484CC2A6374F300B9418D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A60F57302A648C1300073D5E /* Main Menu */,
 				A6A484CD2A6374F900B9418D /* Starships */,
 			);
 			path = Views;
