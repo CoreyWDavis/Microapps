@@ -17,7 +17,7 @@ class StarshipsListViewModel: ObservableObject {
     @Published var starships: [StarshipModel]
     @Published var state: State
     
-    init(starships: [StarshipModel], state: State = .idle) {
+    init(starships: [StarshipModel] = [], state: State = .idle) {
         self.starships = starships
         self.state = state
     }
@@ -58,9 +58,13 @@ struct StarshipsListView: View {
 struct StarshipsListView_Previews: PreviewProvider {
     static let mock = StarshipModel.mock()
     static let model = StarshipsListViewModel(starships: [mock])
+    static let busyModel = StarshipsListViewModel(starships: [mock], state: .loading)
     static var previews: some View {
         NavigationView {
             StarshipsListView(model: model)
+        }
+        NavigationView {
+            StarshipsListView(model: busyModel)
         }
     }
 }

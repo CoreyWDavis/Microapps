@@ -24,6 +24,7 @@ class MainMenuViewModel: ObservableObject {
 struct MainMenuView: View {
     @ObservedObject var model: MainMenuViewModel
     var route = PassthroughSubject<AppRoute, Never>()
+    var isVisble = PassthroughSubject<Bool, Never>()
     
     var body: some View {
         ZStack {
@@ -37,11 +38,15 @@ struct MainMenuView: View {
             }
         }
         .navigationTitle("Main Menu")
+        .onAppear {
+            isVisble.send(true)
+        }
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainMenuView(model: MainMenuViewModel())
+        MainMenuView(model: MainMenuViewModel(state: .loading))
     }
 }
