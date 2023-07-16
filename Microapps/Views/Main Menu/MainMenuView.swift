@@ -31,7 +31,8 @@ struct MainMenuView: View {
                 ProgressView()
             }
             VStack {
-                Button("Starships") { route.send(.starships) }
+                Button("Starships") { route.send(.starshipDetail(id: 9)) }
+                Spacer()
             }
             .disabled(model.state == .loading)
         }

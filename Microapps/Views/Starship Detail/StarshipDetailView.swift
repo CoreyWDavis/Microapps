@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class StarshipViewModel: ObservableObject {
+class StarshipDetailViewModel: ObservableObject {
     var name: String
     var model: String
     var starshipClass: String
@@ -37,8 +37,8 @@ class StarshipViewModel: ObservableObject {
     }
 }
 
-struct StarshipView: View {
-    @ObservedObject var model: StarshipViewModel
+struct StarshipDetailView: View {
+    @ObservedObject var model: StarshipDetailViewModel
 
     var body: some View {
         Form {
@@ -56,12 +56,12 @@ struct StarshipView: View {
     }
 }
 
-struct StarshipView_Previews: PreviewProvider {
+struct StarshipDetailView_Previews: PreviewProvider {
     static let mock = StarshipModel.mock()
-    static let model = StarshipViewModel(model: mock)
+    static let model = StarshipDetailViewModel(model: mock)
     static var previews: some View {
         NavigationView {
-            StarshipView(model: model)            
+            StarshipDetailView(model: model)            
         }
     }
 }

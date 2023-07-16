@@ -31,10 +31,10 @@ class AppCoordinator: NavigationCoordinator {
         case .rootView:
             let rootView = makeRootView()
             navigation = makeNavigation(rootView: rootView)
-        case .starships:
+        case .starshipDetail(let id):
             Task {
                 viewModel?.state = .loading
-                guard let view = await makeStarshipsView() else { return }
+                guard let view = await makeStarshipDetailView(forID: id) else { return }
                 navigation.pushViewController(view, animated: true)
                 viewModel?.state = .idle
             }
@@ -62,13 +62,13 @@ class AppCoordinator: NavigationCoordinator {
     }
     
     @MainActor
-    private func makeStarshipsView() async -> UIViewController? {
-        guard let model = await StarshipModel.fetch(id: 9) else {
+    private func makeStarshipDetailView(forID id: Int) async -> UIViewController? {
+        guard let model = await StarshipModel.fetch(id: id) else {
             print("Error making starships view")
             return nil
         }
-        let viewModel = StarshipViewModel(model: model)
-        let view = StarshipView(model: viewModel)
+        let viewModel = StarshipDetailViewModel(model: model)
+        let view = StarshipDetailView(model: viewModel)
         return UIHostingController(rootView: view)
     }
 }

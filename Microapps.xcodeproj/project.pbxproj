@@ -17,7 +17,7 @@
 		A6A484BB2A633D2E00B9418D /* EndpointRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A484BA2A633D2E00B9418D /* EndpointRepresentable.swift */; };
 		A6A484BD2A633F9800B9418D /* StarshipEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A484BC2A633F9800B9418D /* StarshipEndpoint.swift */; };
 		A6A484BF2A63449A00B9418D /* EndpointFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A484BE2A63449A00B9418D /* EndpointFactory.swift */; };
-		A6A484C12A635A0300B9418D /* StarshipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A484C02A635A0300B9418D /* StarshipView.swift */; };
+		A6A484C12A635A0300B9418D /* StarshipDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A484C02A635A0300B9418D /* StarshipDetailView.swift */; };
 		A6A484C32A63624A00B9418D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A484C22A63624A00B9418D /* Coordinator.swift */; };
 		A6A484C52A6362E200B9418D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A484C42A6362E200B9418D /* AppCoordinator.swift */; };
 		A6A484C72A63639100B9418D /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A484C62A63639100B9418D /* MainMenuView.swift */; };
@@ -37,7 +37,7 @@
 		A6A484BA2A633D2E00B9418D /* EndpointRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointRepresentable.swift; sourceTree = "<group>"; };
 		A6A484BC2A633F9800B9418D /* StarshipEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipEndpoint.swift; sourceTree = "<group>"; };
 		A6A484BE2A63449A00B9418D /* EndpointFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointFactory.swift; sourceTree = "<group>"; };
-		A6A484C02A635A0300B9418D /* StarshipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipView.swift; sourceTree = "<group>"; };
+		A6A484C02A635A0300B9418D /* StarshipDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipDetailView.swift; sourceTree = "<group>"; };
 		A6A484C22A63624A00B9418D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A6A484C42A6362E200B9418D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A6A484C62A63639100B9418D /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
@@ -61,6 +61,15 @@
 				A6A484C62A63639100B9418D /* MainMenuView.swift */,
 			);
 			path = "Main Menu";
+			sourceTree = "<group>";
+		};
+		A60F57312A648E0A00073D5E /* Starship */ = {
+			isa = PBXGroup;
+			children = (
+				A6A484BC2A633F9800B9418D /* StarshipEndpoint.swift */,
+				A6A484B32A62FEF100B9418D /* StarshipModel.swift */,
+			);
+			path = Starship;
 			sourceTree = "<group>";
 		};
 		A67246F62A62FD5C00952BD6 = {
@@ -102,7 +111,7 @@
 				A6A484B72A633C5B00B9418D /* HTTPMethod.swift */,
 				A6A484BA2A633D2E00B9418D /* EndpointRepresentable.swift */,
 				A6A484BE2A63449A00B9418D /* EndpointFactory.swift */,
-				A6A484BC2A633F9800B9418D /* StarshipEndpoint.swift */,
+				A60F57312A648E0A00073D5E /* Starship */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -128,18 +137,17 @@
 			isa = PBXGroup;
 			children = (
 				A60F57302A648C1300073D5E /* Main Menu */,
-				A6A484CD2A6374F900B9418D /* Starships */,
+				A6A484CD2A6374F900B9418D /* Starship Detail */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		A6A484CD2A6374F900B9418D /* Starships */ = {
+		A6A484CD2A6374F900B9418D /* Starship Detail */ = {
 			isa = PBXGroup;
 			children = (
-				A6A484C02A635A0300B9418D /* StarshipView.swift */,
-				A6A484B32A62FEF100B9418D /* StarshipModel.swift */,
+				A6A484C02A635A0300B9418D /* StarshipDetailView.swift */,
 			);
-			path = Starships;
+			path = "Starship Detail";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,7 +226,7 @@
 				A6A484B42A62FEF100B9418D /* StarshipModel.swift in Sources */,
 				A6A484C92A63647600B9418D /* AppRoute.swift in Sources */,
 				A6A484BD2A633F9800B9418D /* StarshipEndpoint.swift in Sources */,
-				A6A484C12A635A0300B9418D /* StarshipView.swift in Sources */,
+				A6A484C12A635A0300B9418D /* StarshipDetailView.swift in Sources */,
 				A6A484B82A633C5B00B9418D /* HTTPMethod.swift in Sources */,
 				A6A484C32A63624A00B9418D /* Coordinator.swift in Sources */,
 				A6A484BF2A63449A00B9418D /* EndpointFactory.swift in Sources */,
