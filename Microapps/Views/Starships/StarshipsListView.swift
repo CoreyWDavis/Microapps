@@ -31,7 +31,12 @@ struct StarshipsListView: View {
         ZStack {
             List {
                 ForEach(model.starships) { starship in
-                    cellView(starship)
+                    NavigationCellView(name: starship.name)
+                        .foregroundColor(model.state == .loading ? .gray : nil)
+                        .onTapGesture {
+                            route.send(.starshipDetail(for: starship.url))
+                        }
+                        .disabled(model.state == .loading)
                 }
             }
             if model.state == .loading {
@@ -39,19 +44,6 @@ struct StarshipsListView: View {
             }
         }
         .navigationTitle("Starships")
-    }
-    
-    private func cellView(_ starship: StarshipModel) -> some View {
-        HStack {
-            Text(starship.name)
-            Spacer()
-            Image(systemName: "chevron.right")
-        }
-        .foregroundColor(model.state == .loading ? .gray : nil)
-        .onTapGesture {
-            route.send(.starshipDetail(for: starship.url))
-        }
-        .disabled(model.state == .loading)
     }
 }
 

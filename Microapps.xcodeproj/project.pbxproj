@@ -18,6 +18,7 @@
 		A68703F32A6B325F00DDD767 /* SWAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68703F22A6B325F00DDD767 /* SWAPIManager.swift */; };
 		A68703F82A6B331400DDD767 /* DefaultSWAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68703F72A6B331400DDD767 /* DefaultSWAPIManager.swift */; };
 		A68703FB2A6B353F00DDD767 /* DefaultNetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68703FA2A6B353F00DDD767 /* DefaultNetworkingManager.swift */; };
+		A68703FD2A6B4E1100DDD767 /* NavigationCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68703FC2A6B4E1100DDD767 /* NavigationCellView.swift */; };
 		A6A484B42A62FEF100B9418D /* StarshipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A484B32A62FEF100B9418D /* StarshipModel.swift */; };
 		A6A484B62A6301D300B9418D /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A484B52A6301D300B9418D /* NetworkingManager.swift */; };
 		A6A484B82A633C5B00B9418D /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A484B72A633C5B00B9418D /* HTTPMethod.swift */; };
@@ -45,6 +46,7 @@
 		A68703F22A6B325F00DDD767 /* SWAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPIManager.swift; sourceTree = "<group>"; };
 		A68703F72A6B331400DDD767 /* DefaultSWAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSWAPIManager.swift; sourceTree = "<group>"; };
 		A68703FA2A6B353F00DDD767 /* DefaultNetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkingManager.swift; sourceTree = "<group>"; };
+		A68703FC2A6B4E1100DDD767 /* NavigationCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCellView.swift; sourceTree = "<group>"; };
 		A6A484B32A62FEF100B9418D /* StarshipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipModel.swift; sourceTree = "<group>"; };
 		A6A484B52A6301D300B9418D /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		A6A484B72A633C5B00B9418D /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				A6A484CB2A6374B800B9418D /* Coordinators */,
 				A6A484B92A633C7300B9418D /* Networking */,
 				A6A484CA2A6364B000B9418D /* Routes */,
+				A68703FE2A6B4EF600DDD767 /* Design */,
 				A6A484CC2A6374F300B9418D /* Views */,
 				A672470B2A62FD5D00952BD6 /* Assets.xcassets */,
 				A672470D2A62FD5D00952BD6 /* LaunchScreen.storyboard */,
@@ -135,6 +138,14 @@
 				A68703FA2A6B353F00DDD767 /* DefaultNetworkingManager.swift */,
 			);
 			path = "Networking Manager";
+			sourceTree = "<group>";
+		};
+		A68703FE2A6B4EF600DDD767 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				A68703FC2A6B4E1100DDD767 /* NavigationCellView.swift */,
+			);
+			path = Design;
 			sourceTree = "<group>";
 		};
 		A6A484B92A633C7300B9418D /* Networking */ = {
@@ -264,6 +275,7 @@
 				A60F57392A64A93100073D5E /* StarshipsCoordinator.swift in Sources */,
 				A6A484BB2A633D2E00B9418D /* EndpointRepresentable.swift in Sources */,
 				A6A484B42A62FEF100B9418D /* StarshipModel.swift in Sources */,
+				A68703FD2A6B4E1100DDD767 /* NavigationCellView.swift in Sources */,
 				A68703F82A6B331400DDD767 /* DefaultSWAPIManager.swift in Sources */,
 				A6A484C92A63647600B9418D /* AppRoute.swift in Sources */,
 				A6A484BD2A633F9800B9418D /* StarshipEndpoint.swift in Sources */,
