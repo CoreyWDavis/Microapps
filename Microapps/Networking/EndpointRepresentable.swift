@@ -16,6 +16,10 @@ protocol PathRepresentable {
     func queryItems() throws -> [String: String?]?
 }
 
+protocol DecodingRepresentable {
+    func decodingStrategy() -> JSONDecoder.KeyDecodingStrategy
+}
+
 typealias EndpointRepresentable =
     HTTPMethodRepresentable &
     PathRepresentable

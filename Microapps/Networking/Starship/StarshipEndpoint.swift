@@ -35,6 +35,10 @@ enum StarshipEndpoint: SWAPIEndpointRepresentable {
         return nil
     }
     
+    func decodingStrategy() -> JSONDecoder.KeyDecodingStrategy {
+        return .convertFromSnakeCase
+    }
+    
     var description: String {
         switch self {
         case .allStarships: return "All starships"

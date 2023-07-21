@@ -8,12 +8,12 @@
 import Foundation
 
 struct DefaultSWAPIManager: SWAPIManager {
-    static func fetch<T: Codable>(_ endpoint: EndpointRepresentable) async -> T? {
+    static func fetch<T: Codable>(_ endpoint: SWAPIEndpointRepresentable) async -> T? {
         do {
             let request = try EndpointFactory.makeRequest(endpoint)
             guard let data = await DefaultNetworkingManager.fetch(request) else { return nil }
             let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            decoder.keyDecodingStrategy = endpoint.decodingStrategy()
             return try decoder.decode(T.self, from: data)
         } catch EndpointFactoryError.unableToConstructURLFromComponents(let description) {
             print("Error building URL: \(description)")

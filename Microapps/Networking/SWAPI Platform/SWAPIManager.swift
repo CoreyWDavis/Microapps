@@ -7,8 +7,10 @@
 
 import Foundation
 
-protocol SWAPIEndpointRepresentable: EndpointRepresentable {}
+typealias SWAPIEndpointRepresentable =
+    EndpointRepresentable &
+    DecodingRepresentable
 
 protocol SWAPIManager {
-    static func fetch<T: Codable>(_ endpoint: EndpointRepresentable) async -> T?
+    static func fetch<T: Codable>(_ endpoint: SWAPIEndpointRepresentable) async -> T?
 }
