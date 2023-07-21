@@ -11,16 +11,17 @@ import Combine
 
 class AppCoordinator: NavigationCoordinator {
     weak var delegate: CoordinatorDelegate?
-    var navigation = UINavigationController()
-    var children: [Coordinator] = []
+    private(set) var navigation = UINavigationController()
+    private(set) var children: [Coordinator] = []
     var subscriptions = Set<AnyCancellable>()
     private var rootViewModel: MainMenuViewModel?
     
     @MainActor
-    func start() {
+    func start() -> UIViewController {
         print("Starting...")
         navigate(to: .rootView)
         print("Started")
+        return navigation
     }
     
     func stop() {
@@ -62,6 +63,11 @@ class AppCoordinator: NavigationCoordinator {
             }
             .store(in: &subscriptions)
         return UIHostingController(rootView: view)
+    }
+    
+    func dismissAllChildren() {
+        children.forEach { $0.stop() }
+        children.removeAll()
     }
 }
 

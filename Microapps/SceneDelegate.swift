@@ -14,9 +14,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        appCoordinator.start()
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = appCoordinator.navigation
+        window?.rootViewController = appCoordinator.start()
         window?.makeKeyAndVisible()
         window?.windowScene = windowScene
     }

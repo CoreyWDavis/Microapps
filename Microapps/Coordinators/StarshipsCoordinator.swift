@@ -12,7 +12,6 @@ import Combine
 class StarshipsCoordinator: NavigationCoordinator {
     weak var delegate: CoordinatorDelegate?
     var navigation: UINavigationController
-    var children: [Coordinator] = []
     var subscriptions = Set<AnyCancellable>()
     private var listViewModel: StarshipsListViewModel?
     
@@ -21,15 +20,15 @@ class StarshipsCoordinator: NavigationCoordinator {
     }
     
     @MainActor
-    func start() {
+    func start() -> UIViewController {
         print("Starting...")
         navigate(to: .starshipsList)
         print("Started")
+        return navigation
     }
     
     func stop() {
         print("Stopping...")
-        dismissAllChildren()
         print("Stopped")
     }
     

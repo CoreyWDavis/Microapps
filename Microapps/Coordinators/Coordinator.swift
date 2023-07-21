@@ -14,9 +14,8 @@ protocol CoordinatorDelegate: AnyObject {
 
 protocol Coordinator: AnyObject {
     var delegate: CoordinatorDelegate? { get set }
-    var children: [Coordinator] { get set }
     
-    func start()
+    func start() -> UIViewController
     func stop()
 }
 
@@ -29,10 +28,5 @@ extension NavigationCoordinator {
         let nav = UINavigationController(rootViewController: rootView)
         nav.navigationBar.prefersLargeTitles = true
         return nav
-    }
-    
-    func dismissAllChildren() {
-        children.forEach { $0.stop() }
-        children.removeAll()
     }
 }
