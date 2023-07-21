@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum StarshipEndpoint: EndpointRepresentable {
+enum StarshipEndpoint: SWAPIEndpointRepresentable {
     private enum StarshipRawPath: String {
         case starships = "starships"
         case starshipByID = "starships/%d"

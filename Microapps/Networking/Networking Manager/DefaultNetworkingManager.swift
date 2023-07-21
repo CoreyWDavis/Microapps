@@ -1,16 +1,15 @@
 //
-//  NetworkingManager.swift
+//  DefaultNetworkingManager.swift
 //  Microapps
 //
-//  Created by Corey Davis on 7/15/23.
+//  Created by Corey Davis on 7/21/23.
 //
 
 import Foundation
 
-struct NetworkingManager {    
-    static func fetch<T: Codable>(_ endpoint: EndpointRepresentable) async -> T? {
+struct DefaultNetworkingManager: NetworkingManager {
+    static func fetch(_ request: URLRequest) async -> Data? {
         do {
-            let request = try EndpointFactory.makeRequest(endpoint)
             let (data, response) = try await URLSession.shared.data(for: request)
             guard let httpResponse = response as? HTTPURLResponse else {
                 print("Unexpected resposne: \(response.description)")
@@ -20,11 +19,7 @@ struct NetworkingManager {
                 print("Unsuccessful response: \(httpResponse)")
                 return nil
             }
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            return try decoder.decode(T.self, from: data)
-        } catch EndpointFactoryError.unableToConstructURLFromComponents(let description) {
-            print("Error building URL: \(description)")
+            return data
         } catch {
             print("Error fetching data: \(error)")
         }

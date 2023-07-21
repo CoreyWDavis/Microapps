@@ -25,7 +25,7 @@ struct StarshipsModel: Codable {
 
 extension StarshipsModel {
     static func fetch() async -> StarshipsModel? {
-        return await NetworkingManager.fetch(StarshipEndpoint.allStarships)
+        return await DefaultSWAPIManager.fetch(StarshipEndpoint.allStarships)
     }
     
     static func fetch(page: Int, completionHandler: @escaping ((StarshipsModel?) -> Void)) {

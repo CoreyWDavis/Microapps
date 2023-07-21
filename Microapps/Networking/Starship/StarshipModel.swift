@@ -71,7 +71,7 @@ extension StarshipModel: Identifiable {
 
 extension StarshipModel {
     static func fetch(id: Int) async -> StarshipModel? {
-        return await NetworkingManager.fetch(StarshipEndpoint.starship(id))
+        return await DefaultSWAPIManager.fetch(StarshipEndpoint.starship(id))
     }
         
     static func fetch(id: Int, completionHandler: @escaping ((StarshipModel?) -> Void)) {
