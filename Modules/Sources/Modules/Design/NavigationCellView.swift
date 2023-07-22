@@ -7,10 +7,14 @@
 
 import SwiftUI
 
-struct NavigationCellView: View {
+public struct NavigationCellView: View {
     var name: String
     
-    var body: some View {
+    public init(name: String) {
+        self.name = name
+    }
+    
+    public var body: some View {
         HStack {
             Text(name)
             Spacer()
