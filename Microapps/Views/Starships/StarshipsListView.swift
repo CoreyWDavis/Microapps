@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Combine
-import Modules
+import ViewKit
 
 class StarshipsListViewModel: ObservableObject {
     enum State {

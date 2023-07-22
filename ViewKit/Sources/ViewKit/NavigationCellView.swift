@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DesignKit
 
 public struct NavigationCellView: View {
     var name: String
@@ -17,6 +18,7 @@ public struct NavigationCellView: View {
     public var body: some View {
         HStack {
             Text(name)
+                .foregroundColor(ColorManager.darkBlue.color)
             Spacer()
             Image(systemName: "chevron.right")
         }
