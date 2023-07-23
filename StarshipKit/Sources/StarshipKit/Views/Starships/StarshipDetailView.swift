@@ -41,18 +41,22 @@ struct StarshipDetailView: View {
     @ObservedObject var model: StarshipDetailViewModel
 
     var body: some View {
-        Form {
-            Section(content: {
-                LabeledContent("Model", value: model.model)
-                LabeledContent("Class", value: model.starshipClass)
-                LabeledContent("Crew", value: model.crewCount)
-                LabeledContent("Passenger", value: model.passengerCount)
-                LabeledContent("Hyperdrive Rating", value: model.hyperdriveRating)
-            }, footer: {
-                Text(model.url)
-            })
+        if #available(iOS 16, *) {
+            Form {
+                Section(content: {
+                    LabeledContent("Model", value: model.model)
+                    LabeledContent("Class", value: model.starshipClass)
+                    LabeledContent("Crew", value: model.crewCount)
+                    LabeledContent("Passenger", value: model.passengerCount)
+                    LabeledContent("Hyperdrive Rating", value: model.hyperdriveRating)
+                }, footer: {
+                    Text(model.url)
+                })
+            }
+            .navigationTitle(model.name)
+        } else {
+            fatalError("View not availing in iOS 15 or below")
         }
-        .navigationTitle(model.name)
     }
 }
 

@@ -8,6 +8,8 @@
 import UIKit
 import SwiftUI
 import Combine
+import CoordinatorKit
+import StarshipKit
 
 class AppCoordinator: NavigationCoordinator {
     weak var delegate: CoordinatorDelegate?

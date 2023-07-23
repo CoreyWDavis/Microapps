@@ -8,26 +8,27 @@
 import UIKit
 import SwiftUI
 import Combine
+import CoordinatorKit
 
-class StarshipsCoordinator: NavigationCoordinator {
-    weak var delegate: CoordinatorDelegate?
-    var navigation: UINavigationController
+public class StarshipsCoordinator: NavigationCoordinator {
+    public weak var delegate: CoordinatorDelegate?
+    public var navigation: UINavigationController
     var subscriptions = Set<AnyCancellable>()
-    private var listViewModel: StarshipsListViewModel?
+    var listViewModel: StarshipsListViewModel?
     
-    init(navigationController: UINavigationController) {
+    public init(navigationController: UINavigationController) {
         self.navigation = navigationController
     }
     
     @MainActor
-    func start() -> UIViewController {
+    public func start() -> UIViewController {
         print("Starting...")
         navigate(to: .starshipsList)
         print("Started")
         return navigation
     }
     
-    func stop() {
+    public func stop() {
         print("Stopping...")
         print("Stopped")
     }

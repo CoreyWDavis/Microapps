@@ -29,22 +29,26 @@ struct StarshipsListView: View {
     var route = PassthroughSubject<StarshipRoute, Never>()
     
     var body: some View {
-        ZStack {
-            List {
-                ForEach(model.starships) { starship in
-                    NavigationCellView(name: starship.name)
-                        .foregroundColor(model.state == .loading ? .gray : nil)
-                        .onTapGesture {
-                            route.send(.starshipDetail(for: starship.url))
-                        }
-                        .disabled(model.state == .loading)
+        if #available(iOS 14, *) {
+            ZStack {
+                List {
+                    ForEach(model.starships) { starship in
+                        NavigationCellView(name: starship.name)
+                            .foregroundColor(model.state == .loading ? .gray : nil)
+                            .onTapGesture {
+                                route.send(.starshipDetail(for: starship.url))
+                            }
+                            .disabled(model.state == .loading)
+                    }
+                }
+                if model.state == .loading {
+                    ProgressView()
                 }
             }
-            if model.state == .loading {
-                ProgressView()
-            }
+            .navigationTitle("Starships")
+        } else {
+            fatalError("View not available in iOS 13 or below")
         }
-        .navigationTitle("Starships")
     }
 }
 
