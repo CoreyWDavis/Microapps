@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import DesignKit
 
 public struct NavigationCellView: View {
     var name: String

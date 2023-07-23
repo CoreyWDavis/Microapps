@@ -10,44 +10,44 @@ import Foundation
 // https://swapi.dev/api/starships/     All ships
 // https://swapi.dev/api/starships/9/   Specific ship
 
-struct StarshipModel: Codable {
+public struct StarshipModel: Codable {
     /// The common name of this starship
-    var name: String
+    public var name: String
     
     /// The model or official name of this starship
-    var model: String
+    public var model: String
     
     /// The class of this starship
-    var starshipClass: String
+    public var starshipClass: String
     
     /// Comma separated string of the startship's manufacturer(s)
-    var manufacturer: String
+    public var manufacturer: String
     
     /// The cost of this starship new, in galactic credits
-    var costInCredits: String
+    public var costInCredits: String
     
     /// The length of this starship in meters
-    var length: String
+    public var length: String
     
     /// The number of personnel needed to run or pilot this starship
-    var crew: String
+    public var crew: String
     
     /// The number of non-essential people this starship can transport
-    var passengers: String
+    public var passengers: String
     
     /// The maximum speed of this starship in the atmosphere
     ///
     /// "N/A" if this starship is incapable of atmospheric flight
-    var maxAtmospheringSpeed: String
+    public var maxAtmospheringSpeed: String
     
     /// The class of this starships hyperdrive
-    var hyperdriveRating: String
+    public var hyperdriveRating: String
     
     /// The maximum number of kilograms that this starship can transport
-    var cargoCapacity: String
+    public var cargoCapacity: String
     
     /// The maximum length of time that this starship can provide consumables for its entire crew without having to resupply
-    var consumables: String
+    public var consumables: String
     
     /// An array of Film URL Resources that this starship has appeared in
     // var films: [Film]
@@ -56,25 +56,25 @@ struct StarshipModel: Codable {
     // var pilots: [Person]
     
     /// The hypermedia URL of this resource
-    var url: String
+    public var url: String
     
     /// The ISO 8601 date format of the time that this resource was created
-    var created: String
+    public var created: String
     
     /// The ISO 8601 date format of the time that this resource was edited
-    var edited: String
+    public var edited: String
 }
 
 extension StarshipModel: Identifiable {
-    var id: UUID { UUID() }
+    public var id: UUID { UUID() }
 }
 
 extension StarshipModel {
-    static func fetch(id: Int) async -> StarshipModel? {
+    public static func fetch(id: Int) async -> StarshipModel? {
         return await DefaultSWAPIManager.fetch(StarshipEndpoint.starship(id))
     }
         
-    static func fetch(id: Int, completionHandler: @escaping ((StarshipModel?) -> Void)) {
+    public static func fetch(id: Int, completionHandler: @escaping ((StarshipModel?) -> Void)) {
         Task {
             let data = await fetch(id: id)
             completionHandler(data)
@@ -83,7 +83,7 @@ extension StarshipModel {
 }
 
 extension StarshipModel {
-    static func mock() -> StarshipModel {
+    public static func mock() -> StarshipModel {
         return StarshipModel(name: "Death Star",
                              model: "DS-1 Orbital Battle Station",
                              starshipClass: "Deep Space Mobile Battlestation",

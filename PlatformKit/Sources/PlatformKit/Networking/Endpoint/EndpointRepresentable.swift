@@ -7,19 +7,19 @@
 
 import Foundation
 
-protocol HTTPMethodRepresentable {
+public protocol HTTPMethodRepresentable {
     func method() throws -> HTTPMethod
 }
 
-protocol PathRepresentable {
+public protocol PathRepresentable {
     func path() throws -> String
     func queryItems() throws -> [String: String?]?
 }
 
-protocol DecodingRepresentable {
+public protocol DecodingRepresentable {
     func decodingStrategy() -> JSONDecoder.KeyDecodingStrategy
 }
 
-typealias EndpointRepresentable =
+public typealias EndpointRepresentable =
     HTTPMethodRepresentable &
     PathRepresentable

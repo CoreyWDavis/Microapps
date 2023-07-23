@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum StarshipEndpoint: SWAPIEndpointRepresentable {
+public enum StarshipEndpoint: SWAPIEndpointRepresentable {
     private enum StarshipRawPath: String {
         case starships = "starships"
         case starshipByID = "starships/%d"
@@ -16,13 +16,13 @@ enum StarshipEndpoint: SWAPIEndpointRepresentable {
     case allStarships
     case starship(_ id: Int)
     
-    func method() throws -> HTTPMethod {
+    public func method() throws -> HTTPMethod {
         switch self {
         case .allStarships, .starship: return .get
         }
     }
     
-    func path() throws -> String {
+    public func path() throws -> String {
         switch self {
         case .allStarships:
             return StarshipRawPath.starships.rawValue
@@ -31,15 +31,15 @@ enum StarshipEndpoint: SWAPIEndpointRepresentable {
         }
     }
     
-    func queryItems() throws -> [String: String?]? {
+    public func queryItems() throws -> [String: String?]? {
         return nil
     }
     
-    func decodingStrategy() -> JSONDecoder.KeyDecodingStrategy {
+    public func decodingStrategy() -> JSONDecoder.KeyDecodingStrategy {
         return .convertFromSnakeCase
     }
     
-    var description: String {
+    public var description: String {
         switch self {
         case .allStarships: return "All starships"
         case .starship(let id): return "Starship ID \(id)"

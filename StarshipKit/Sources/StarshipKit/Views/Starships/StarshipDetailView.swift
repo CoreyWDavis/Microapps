@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PlatformKit
 
 class StarshipDetailViewModel: ObservableObject {
     var name: String

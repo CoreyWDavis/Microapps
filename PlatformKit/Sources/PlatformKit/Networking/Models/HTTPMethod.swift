@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum HTTPMethod: String { case delete, get, post, put }
+public enum HTTPMethod: String { case delete, get, post, put }
 
 extension HTTPMethod: CustomStringConvertible {
-    var description: String { return rawValue.uppercased() }
+    public var description: String { return rawValue.uppercased() }
 }

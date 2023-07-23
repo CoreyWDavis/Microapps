@@ -9,6 +9,7 @@ import UIKit
 import SwiftUI
 import Combine
 import CoordinatorKit
+import PlatformKit
 
 public class StarshipsCoordinator: NavigationCoordinator {
     public weak var delegate: CoordinatorDelegate?

@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias SWAPIEndpointRepresentable =
+public typealias SWAPIEndpointRepresentable =
     EndpointRepresentable &
     DecodingRepresentable
 

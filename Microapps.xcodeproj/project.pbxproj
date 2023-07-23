@@ -21,6 +21,7 @@
 /* Begin PBXFileReference section */
 		A649A71F2A6DB8C4004BF638 /* StarshipKit */ = {isa = PBXFileReference; lastKnownFileType = text; path = StarshipKit; sourceTree = SOURCE_ROOT; };
 		A649A7222A6DBEC9004BF638 /* CoordinatorKit */ = {isa = PBXFileReference; lastKnownFileType = text; path = CoordinatorKit; sourceTree = SOURCE_ROOT; };
+		A649A7262A6DEC4A004BF638 /* PlatformKit */ = {isa = PBXFileReference; lastKnownFileType = text; path = PlatformKit; sourceTree = SOURCE_ROOT; };
 		A67246FF2A62FD5C00952BD6 /* Microapps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Microapps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67247022A62FD5C00952BD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A67247042A62FD5C00952BD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 			children = (
 				A649A7222A6DBEC9004BF638 /* CoordinatorKit */,
 				A68704032A6C378100DDD767 /* DesignKit */,
+				A649A7262A6DEC4A004BF638 /* PlatformKit */,
 				A649A71F2A6DB8C4004BF638 /* StarshipKit */,
 				A67247022A62FD5C00952BD6 /* AppDelegate.swift */,
 				A67247042A62FD5C00952BD6 /* SceneDelegate.swift */,

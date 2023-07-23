@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct DefaultSWAPIManager: SWAPIManager {
-    static func fetch<T: Codable>(_ endpoint: SWAPIEndpointRepresentable) async -> T? {
+public struct DefaultSWAPIManager: SWAPIManager {
+    public static func fetch<T: Codable>(_ endpoint: SWAPIEndpointRepresentable) async -> T? {
         do {
             let request = try EndpointFactory.makeRequest(endpoint)
             guard let data = await DefaultNetworkingManager.fetch(request) else { return nil }
