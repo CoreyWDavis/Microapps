@@ -28,7 +28,7 @@
 		A6A484C12A635A0300B9418D /* StarshipDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A484C02A635A0300B9418D /* StarshipDetailView.swift */; };
 		A6A484C32A63624A00B9418D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A484C22A63624A00B9418D /* Coordinator.swift */; };
 		A6A484C52A6362E200B9418D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A484C42A6362E200B9418D /* AppCoordinator.swift */; };
-		A6A484C72A63639100B9418D /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A484C62A63639100B9418D /* MainMenuView.swift */; };
+		A6A484C72A63639100B9418D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A484C62A63639100B9418D /* RootView.swift */; };
 		A6A484C92A63647600B9418D /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A484C82A63647600B9418D /* AppRoute.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +57,7 @@
 		A6A484C02A635A0300B9418D /* StarshipDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipDetailView.swift; sourceTree = "<group>"; };
 		A6A484C22A63624A00B9418D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A6A484C42A6362E200B9418D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		A6A484C62A63639100B9418D /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		A6A484C62A63639100B9418D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		A6A484C82A63647600B9418D /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,12 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A60F57302A648C1300073D5E /* Main Menu */ = {
+		A60F57302A648C1300073D5E /* Root View */ = {
 			isa = PBXGroup;
 			children = (
-				A6A484C62A63639100B9418D /* MainMenuView.swift */,
+				A6A484C42A6362E200B9418D /* AppCoordinator.swift */,
+				A6A484C82A63647600B9418D /* AppRoute.swift */,
+				A6A484C62A63639100B9418D /* RootView.swift */,
 			);
-			path = "Main Menu";
+			path = "Root View";
 			sourceTree = "<group>";
 		};
 		A60F57312A648E0A00073D5E /* Starship */ = {
@@ -118,6 +120,7 @@
 				A6A484CB2A6374B800B9418D /* Coordinators */,
 				A6A484B92A633C7300B9418D /* Networking */,
 				A6A484CA2A6364B000B9418D /* Routes */,
+				A60F57302A648C1300073D5E /* Root View */,
 				A6A484CC2A6374F300B9418D /* Views */,
 				A672470B2A62FD5D00952BD6 /* Assets.xcassets */,
 				A672470D2A62FD5D00952BD6 /* LaunchScreen.storyboard */,
@@ -167,7 +170,6 @@
 		A6A484CA2A6364B000B9418D /* Routes */ = {
 			isa = PBXGroup;
 			children = (
-				A6A484C82A63647600B9418D /* AppRoute.swift */,
 				A60F57362A64A21400073D5E /* StarshipRoute.swift */,
 			);
 			path = Routes;
@@ -177,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				A6A484C22A63624A00B9418D /* Coordinator.swift */,
-				A6A484C42A6362E200B9418D /* AppCoordinator.swift */,
 				A60F57382A64A93100073D5E /* StarshipsCoordinator.swift */,
 			);
 			path = Coordinators;
@@ -186,7 +187,6 @@
 		A6A484CC2A6374F300B9418D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A60F57302A648C1300073D5E /* Main Menu */,
 				A6A484CD2A6374F900B9418D /* Starships */,
 			);
 			path = Views;
@@ -277,7 +277,7 @@
 				A60F57332A64963E00073D5E /* StarshipsListView.swift in Sources */,
 				A6A484C52A6362E200B9418D /* AppCoordinator.swift in Sources */,
 				A68703F32A6B325F00DDD767 /* SWAPIManager.swift in Sources */,
-				A6A484C72A63639100B9418D /* MainMenuView.swift in Sources */,
+				A6A484C72A63639100B9418D /* RootView.swift in Sources */,
 				A60F57392A64A93100073D5E /* StarshipsCoordinator.swift in Sources */,
 				A6A484BB2A633D2E00B9418D /* EndpointRepresentable.swift in Sources */,
 				A6A484B42A62FEF100B9418D /* StarshipModel.swift in Sources */,

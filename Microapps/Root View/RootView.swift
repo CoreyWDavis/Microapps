@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class MainMenuViewModel: ObservableObject {
+class RootViewModel: ObservableObject {
     enum State {
         case idle
         case loading
@@ -21,8 +21,8 @@ class MainMenuViewModel: ObservableObject {
     }
 }
 
-struct MainMenuView: View {
-    @ObservedObject var model: MainMenuViewModel
+struct RootView: View {
+    @ObservedObject var model: RootViewModel
     var route = PassthroughSubject<AppRoute, Never>()
     var isVisble = PassthroughSubject<Bool, Never>()
     
@@ -46,7 +46,7 @@ struct MainMenuView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainMenuView(model: MainMenuViewModel())
-        MainMenuView(model: MainMenuViewModel(state: .loading))
+        RootView(model: RootViewModel())
+        RootView(model: RootViewModel(state: .loading))
     }
 }

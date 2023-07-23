@@ -14,12 +14,12 @@ class AppCoordinator: NavigationCoordinator {
     private(set) var navigation = UINavigationController()
     private(set) var children: [Coordinator] = []
     var subscriptions = Set<AnyCancellable>()
-    private var rootViewModel: MainMenuViewModel?
+    private var rootViewModel: RootViewModel?
     
     @MainActor
     func start() -> UIViewController {
         print("Starting...")
-        navigate(to: .rootView)
+        navigation = makeNavigation(rootView: makeRootView())
         print("Started")
         return navigation
     }
@@ -33,22 +33,19 @@ class AppCoordinator: NavigationCoordinator {
     @MainActor
     private func navigate(to route: AppRoute) {
         switch route {
-        case .rootView:
-            let rootView = makeRootView()
-            navigation = makeNavigation(rootView: rootView)
         case .starships:
             let starshipsCoordinator = StarshipsCoordinator(navigationController: navigation)
             starshipsCoordinator.delegate = self
             children.append(starshipsCoordinator)
-            starshipsCoordinator.start()
+            _ = starshipsCoordinator.start()
         }
     }
     
     @MainActor
     private func makeRootView() -> UIViewController {
-        let model = MainMenuViewModel()
+        let model = RootViewModel()
         rootViewModel = model
-        let view = MainMenuView(model: model)
+        let view = RootView(model: model)
         view.route
             .subscribe(on: RunLoop.main)
             .sink { [weak self] route in
@@ -59,6 +56,8 @@ class AppCoordinator: NavigationCoordinator {
             .subscribe(on: RunLoop.main)
             .sink { [weak self] visible in
                 guard visible else { return }
+                // If root view is visible then the children have been dismissed
+                // and can be removed from the `children` array
                 self?.dismissAllChildren()
             }
             .store(in: &subscriptions)
