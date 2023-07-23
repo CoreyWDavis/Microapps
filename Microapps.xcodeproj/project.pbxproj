@@ -28,7 +28,6 @@
 		A672470E2A62FD5D00952BD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A67247102A62FD5D00952BD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A68704032A6C378100DDD767 /* DesignKit */ = {isa = PBXFileReference; lastKnownFileType = text; path = DesignKit; sourceTree = SOURCE_ROOT; };
-		A68704062A6C3B0000DDD767 /* ViewKit */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewKit; sourceTree = SOURCE_ROOT; };
 		A6A484C42A6362E200B9418D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A6A484C62A63639100B9418D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		A6A484C82A63647600B9418D /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
@@ -80,7 +79,6 @@
 				A649A7222A6DBEC9004BF638 /* CoordinatorKit */,
 				A68704032A6C378100DDD767 /* DesignKit */,
 				A649A71F2A6DB8C4004BF638 /* StarshipKit */,
-				A68704062A6C3B0000DDD767 /* ViewKit */,
 				A67247022A62FD5C00952BD6 /* AppDelegate.swift */,
 				A67247042A62FD5C00952BD6 /* SceneDelegate.swift */,
 				A60F57302A648C1300073D5E /* Root View */,
