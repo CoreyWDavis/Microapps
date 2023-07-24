@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 import Combine
-import CoordinatorKit
+import CoreKit
 import PlatformKit
 
 public class StarshipsCoordinator: NavigationCoordinator {

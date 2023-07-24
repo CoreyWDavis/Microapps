@@ -13,7 +13,7 @@ let package = Package(
             targets: ["StarshipKit"]),
     ],
     dependencies: [
-        .package(path: "../CoordinatorKit"),
+        .package(path: "../CoreKit"),
         .package(path: "../DesignKit"),
         .package(path: "../PlatformKit")
     ],
@@ -22,6 +22,6 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "StarshipKit",
-            dependencies: ["CoordinatorKit", "DesignKit", "PlatformKit"])
+            dependencies: ["CoreKit", "DesignKit", "PlatformKit"])
     ]
 )
