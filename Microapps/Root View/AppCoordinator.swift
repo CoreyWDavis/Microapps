@@ -17,7 +17,6 @@ class AppCoordinator: NavigationCoordinator {
     private(set) var navigation = UINavigationController()
     private(set) var children: [Coordinator] = []
     var subscriptions = Set<AnyCancellable>()
-    private var rootViewModel: RootViewModel?
     
     @MainActor
     func start() -> UIViewController {
@@ -51,9 +50,7 @@ class AppCoordinator: NavigationCoordinator {
     
     @MainActor
     private func makeRootView() -> UIViewController {
-        let model = RootViewModel()
-        rootViewModel = model
-        let view = RootView(model: model)
+        let view = RootView()
         view.route
             .subscribe(on: RunLoop.main)
             .sink { [weak self] route in
