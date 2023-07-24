@@ -28,8 +28,10 @@ struct RootView: View {
     
     var body: some View {
         ZStack {
-            VStack {
+            VStack(spacing: 16) {
                 Button("Starships") { route.send(.starships) }
+                    .padding(.top, 16)
+                Button("Planets") { route.send(.planets) }
                 Spacer()
             }
             .disabled(model.state == .loading)

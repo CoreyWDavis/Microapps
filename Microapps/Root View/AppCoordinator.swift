@@ -10,6 +10,7 @@ import SwiftUI
 import Combine
 import CoreKit
 import StarshipKit
+import PlanetKit
 
 class AppCoordinator: NavigationCoordinator {
     weak var delegate: CoordinatorDelegate?
@@ -40,6 +41,11 @@ class AppCoordinator: NavigationCoordinator {
             starshipsCoordinator.delegate = self
             children.append(starshipsCoordinator)
             _ = starshipsCoordinator.start()
+        case .planets:
+            let planetsCoordinator = PlanetCoordinator(navigationController: navigation)
+            planetsCoordinator.delegate = self
+            children.append(planetsCoordinator)
+            _ = planetsCoordinator.start()
         }
     }
     
@@ -76,11 +82,6 @@ extension AppCoordinator: CoordinatorDelegate {
     func coordinatorDidStart(_ coordinator: Coordinator) {}
     
     func coordinatorDidStop(_ coordinator: Coordinator) {
-        children
-            .filter { $0 === coordinator }
-            .forEach {
-                $0.stop()
-            }
         children.removeAll { $0 === coordinator }
     }
 }

@@ -4,13 +4,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "StarshipKit",
+    name: "PlanetKit",
     platforms: [.iOS(.v13)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "StarshipKit",
-            targets: ["StarshipKit"]),
+            name: "PlanetKit",
+            targets: ["PlanetKit"]),
     ],
     dependencies: [
         .package(path: "../CoreKit"),
@@ -19,7 +19,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "StarshipKit",
+            name: "PlanetKit",
             dependencies: ["CoreKit", "DesignKit", "PlatformKit"])
     ]
 )

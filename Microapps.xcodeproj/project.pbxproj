@@ -10,6 +10,7 @@
 		A649A7212A6DBB38004BF638 /* StarshipKit in Frameworks */ = {isa = PBXBuildFile; productRef = A649A7202A6DBB38004BF638 /* StarshipKit */; };
 		A663EDF62A6F369600E99746 /* CoreKit in Resources */ = {isa = PBXBuildFile; fileRef = A663EDF52A6F369600E99746 /* CoreKit */; };
 		A663EDF82A6F36DA00E99746 /* CoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = A663EDF72A6F36DA00E99746 /* CoreKit */; };
+		A663EDFB2A6F3ABA00E99746 /* PlanetKit in Frameworks */ = {isa = PBXBuildFile; productRef = A663EDFA2A6F3ABA00E99746 /* PlanetKit */; };
 		A67247032A62FD5C00952BD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67247022A62FD5C00952BD6 /* AppDelegate.swift */; };
 		A67247052A62FD5C00952BD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67247042A62FD5C00952BD6 /* SceneDelegate.swift */; };
 		A672470C2A62FD5D00952BD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A672470B2A62FD5D00952BD6 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 		A649A71F2A6DB8C4004BF638 /* StarshipKit */ = {isa = PBXFileReference; lastKnownFileType = text; path = StarshipKit; sourceTree = SOURCE_ROOT; };
 		A649A7262A6DEC4A004BF638 /* PlatformKit */ = {isa = PBXFileReference; lastKnownFileType = text; path = PlatformKit; sourceTree = SOURCE_ROOT; };
 		A663EDF52A6F369600E99746 /* CoreKit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CoreKit; sourceTree = SOURCE_ROOT; };
+		A663EDF92A6F38F000E99746 /* PlanetKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PlanetKit; sourceTree = "<group>"; };
 		A67246FF2A62FD5C00952BD6 /* Microapps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Microapps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67247022A62FD5C00952BD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A67247042A62FD5C00952BD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A663EDFB2A6F3ABA00E99746 /* PlanetKit in Frameworks */,
 				A663EDF82A6F36DA00E99746 /* CoreKit in Frameworks */,
 				A649A7212A6DBB38004BF638 /* StarshipKit in Frameworks */,
 			);
@@ -80,6 +83,7 @@
 			children = (
 				A663EDF52A6F369600E99746 /* CoreKit */,
 				A68704032A6C378100DDD767 /* DesignKit */,
+				A663EDF92A6F38F000E99746 /* PlanetKit */,
 				A649A7262A6DEC4A004BF638 /* PlatformKit */,
 				A649A71F2A6DB8C4004BF638 /* StarshipKit */,
 				A67247022A62FD5C00952BD6 /* AppDelegate.swift */,
@@ -118,6 +122,7 @@
 			packageProductDependencies = (
 				A649A7202A6DBB38004BF638 /* StarshipKit */,
 				A663EDF72A6F36DA00E99746 /* CoreKit */,
+				A663EDFA2A6F3ABA00E99746 /* PlanetKit */,
 			);
 			productName = Microapps;
 			productReference = A67246FF2A62FD5C00952BD6 /* Microapps.app */;
@@ -395,6 +400,10 @@
 		A663EDF72A6F36DA00E99746 /* CoreKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CoreKit;
+		};
+		A663EDFA2A6F3ABA00E99746 /* PlanetKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PlanetKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
