@@ -38,7 +38,12 @@ public class PlanetCoordinator: NavigationCoordinator {
     private func navigate(to route: PlanetRoute) {
         switch route {
         case .planetDetail(let url):
-            fatalError()
+            Task {
+                defer { listViewModel?.state = .idle }
+                listViewModel?.state = .loading
+                guard let view = await makePlanetDetailView(url: url) else { return }
+                navigation.pushViewController(view, animated: true)
+            }
         case .planetsList:
             Task {
                 guard let view = await makePlanetsListView() else { return }
@@ -52,6 +57,21 @@ public class PlanetCoordinator: NavigationCoordinator {
                 listViewModel?.planets = model.results
             }
         }
+    }
+    
+    @MainActor
+    private func makePlanetDetailView(url: String) async -> UIViewController? {
+        guard
+            let lastComponent = url.split(separator: "/").last,
+            let id = Int(lastComponent),
+            let model = await PlanetModel.fetch(id: id)
+        else {
+            print("Error making planet detail view")
+            return nil
+        }
+        let viewModel = PlanetDetailViewModel(model: model)
+        let view = PlanetDetailView(model: viewModel)
+        return UIHostingController(rootView: view)
     }
     
     @MainActor
